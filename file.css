@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 55%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #ffffff;
+  top: -30%;
+}
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: lightblue;
+}
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+.left-text {
+  color: #1479ee;
+  font-size: xxx-large;
+}
+.right-text {
+  color: #1479ee;
+  font-size: xxx-large;
+}
+button {
+  color: black;
+  position: relative;
+  top: 100px;
+}
+form {
+  margin-top: 50px;
+  border: none;
+  outline: none;
+  padding: none;
+  margin: none;
+}
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  padding: none;
+  margin: none;
+}
+.psw {
+  position: "relative";
+  top: 90px;
+}
+.email{
+  position: "relative";
+  bottom: 300px;
+}
+.passconfirm {
+  position: "relative";
+  top: 100px;
+}
+
+.left {
+  width: 50%;
+  float: left;
+}
+.right {
+  width: 50%;
+  float: left;
+}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="file.css">
+  <title>engineercore</title>
+</head>
+<body>
+  <div class="split left">
+    <div class="centered">
+      <h2 id="text-left-right" class="text-left-right">
+        <span class="left-text">engineer</span>
+      <span class="right-text">core</span>
+    </h2>
+      <p>Create an account</p>
+      <form id=signup-form>
+        <div class="psw">
+      <label for="Password" id="PASSWORD"></label>
+      <input id='pass2' class="ps" type="text" placeholder="Enter 6 Digital #" name="email" required>
+    </div>
+      </form>
+      <button type="submit" id="number" onclick="submit_()">Confirm!</button>
+    </div>
+    <script>
+      function submit_(){
+        var num = parseInt(document.getElementById("pass2").value);
+        var data = {num};
+        $.post('/confirm' ,data, function(a) {
+      console.log('Server recieved our #');
+      console.log(a)
+      if(a == "Invalid code") {
+        alert("Invalid code");
+      }
+      });
+      }
+      
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </div>
+  <div class="split right">
+    <div class="centered">
+      <h2>John Doe</h2>
+      <p>Think Better <br> Win Togther<br></p>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

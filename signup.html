@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <title>engineercore</title>
+</head>
+<body>
+  <div class="split left">
+    <div class="centered">
+      <h2 id="text-left-right" class="text-left-right">
+        <span class="left-text">engineer</span>
+      <span class="right-text">core</span>
+    </h2>
+      <p>Create an account</p>
+      <form id=signup-form>
+        <div class="email">
+      <label for="email" id="email"></label>
+      <input id='emai' class="emai" type="text" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class="psw">
+      <label for="Password" id="PASSWORD"></label>
+      <input id='pass2' class="ps" type="PASSWORD" placeholder="Enter Password" name="email" required>
+    </div>
+    <div class="passconfirm">
+      <label for="pswconfirm"></label>
+      <input type="PASSWORD" id = 'pass1' class="confirmpsw" placeholder="Repeat Password">
+    </div>
+      </form>
+      <button type="submit" onclick="submit_()">Start Learning!</button>
+    </div>
+  </div>
+  <div class="split right">
+    <div class="centered">
+      <h2>John Doe</h2>
+      <p>Think Better <br> Win Togther<br></p>
+    </div>
+  </div>
+  </div>
+</body>
+<script>
+  function submit_(){
+  console.log('pressed!');
+  console.log(document.getElementById('emai').value);
+  console.log(document.getElementById('pass1').value)
+  var pass1 = document.getElementById('pass1').value
+  var pass2 = document.getElementById('pass2').value
+  var email = document.getElementById('emai').value
+  if (pass1.length >= 20){
+    alert("Password should be less than 20 char")
+    document.getElementById('pass1').value = ""
+    document.getElementById('pass2').value = ""
+  } 
+  else if(pass1 != pass2){
+    alert("Passwords do not match")
+    document.getElementById('pass1').value = ""
+    document.getElementById('pass2').value = ""
+  }else{
+    console.log(pass1, email) 
+
+    //$('form').on('submit', (e) => {
+    //e.preventDefault();
+
+      
+    const data = {
+      email,
+      pass1
+    };
+
+    $.post('/email', data, function() {
+      console.log('Server recieved our data');
+    });
+  }};
+
+
+</script>
+
+<script>
+  console.log(document.getElementsByTagName('div'))
+  for(d = 0; d < document.getElementsByTagName('div').length; d++) {
+     document.getElementsByTagName('div')[d].style.boxSizing = 'border-box';  
+    }
+  var right = document.getElementsByClassName('split right')[0];
+  right.style.height = '75%';
+  right.style.width = '55%';
+  right.style.position  = 'fixed';
+  right.style.zIndex = '1';
+  right.style.top = '0';
+  right.style.overflowX = 'hidden';
+  right.style.paddingTop = '20px'; 
+  right.style.right = 0
+  var left = document.getElementsByClassName('split left')[0];
+  left.style.height = '75%';
+  left.style.width = '55%';
+  left.style.position  = 'fixed';
+  left.style.zIndex = '1'; 
+  left.style.left = 0;
+  left.style.backgroundColor = '#ffffff';
+  left.style.top = '-30%';
+  left.style.overflowX = 'hidden';
+  left.style.paddingTop = '20px'; 
+  var centered = document.getElementsByClassName('centered')[0];
+  centered.style.position = 'absolute';
+  centered.style.top = '50%';
+  centered.style.left = '40%';
+  centered.style.transform = 'translate(-50%, -50%)';
+  centered.style.textAlign = 'center';
+  var leftText = document.getElementsByClassName('left-text')[0]
+  leftText.style.color = '#1479ee';
+  leftText.style.fontSize = 'xxx-large';
+  
+
+</script>  
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+</html>
